@@ -109,7 +109,7 @@ select{
     padding: 0.6em;
     font-size: 1em;
     border-radius: 0.3em;
-    background-image: url("./images/chevron-down-solid.svg");
+    background-image: url("../images/chevron-down-solid.svg");
     background-repeat: no-repeat;
     background-position: right 15px top 50%, center;
     background-size: 15px 15px;

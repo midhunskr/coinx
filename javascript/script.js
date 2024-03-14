@@ -20,7 +20,7 @@ for(let i=0; i<tabPanes.length;i++){
 }
 
 
-let api = `http://api.exchangeratesapi.io/v1/latest?access_key=${apiKey}`
+let api = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`
 const countryInput1 = document.getElementById("country")
 const countryInput2 = document.getElementById("country2")
 
@@ -56,8 +56,8 @@ let convertCurrency = () => {
         fetch(api)
             .then(response => response.json())
             .then((data) => {
-                let fromExchangeRate = data.rates[fromCurrency]
-                let toExchangeRate = data.rates[toCurrency]
+                let fromExchangeRate = data.conversion_rates[fromCurrency]
+                let toExchangeRate = data.conversion_rates[toCurrency]
                 const convertedAmount = (amount / fromExchangeRate) * toExchangeRate
                 result.innerHTML = `${amount} ${fromCurrency} = ${convertedAmount.toFixed(2)} ${toCurrency}`
             })
