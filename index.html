@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <title>JS - Vertical Tab</title>
+    <title>CoinX - AIO Currency Tool</title>
     <link rel="stylesheet" href="./css/style.css">
+
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Bootstrap -->
@@ -14,44 +16,57 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="tabs">
-        <h4 class="position-absolute coin">Coin<span class="x fs-4" id="logo">X</span></h4>
-        <div class="tab-header">           
-            <div class="active">
-                <i class="fa fa-arrow-right-arrow-left"></i> <span class="logoLabel">Converter</span>
+        <!-- <h4 class="position-absolute coin fs-1 pe-2">cOin<span class="x fs-1" id="logo">X</span></h4> -->
+        <div class="tab-header">
+            <section class="logoSection d-flex flex-column justify-content-center align-items-center" id="logoSection">
+                <img class="logo" src="./images/logo2.png" alt=""> 
+            </section>  
+            <div class="active mainIcons ps-2">
+                <i class="fa fa-arrow-right-arrow-left" id="iconImages"></i> <span class="logoLabel">Converter</span>
             </div>
-            <div>
-                <i class="fa fa-chart-simple"></i> <span class="logoLabel">Trend</span> 
+            <div class="mainIcons trend ps-2 mt-3">
+                <i class="fa fa-chart-simple" id="iconImages"></i> <span class="logoLabel">Trend</span> 
             </div>
-            <div>
-                <i class="fa fa-arrow-trend-up"></i> <span class="logoLabel">Stock</span>
+            <div class="mainIcons stock ps-2 mt-3">
+                <i class="fa-solid fa-newspaper" id="iconImages"></i> <span class="logoLabel">News</span>
             </div>
-            <div>
-                <i class="fa fa-rss"></i> <span class="logoLabel">Insights</span>
+            <div class="mainIcons about ps-2 mt-3">
+                <i class="fa fa-circle-info" id="iconImages"></i> <span class="logoLabel">About</span>
             </div>
         </div>
         <div class="tab-indicator"></div>
+        <div class="tab-indicator2"></div>
         <div class="tab-content">
-            <div class="active rightSide">                  
+            <div class="active rightSide">
+                <label class="chartLabel fs-5 text-secondary" for="myChart">Convert Currencies</label>              
                 <section class="outputDiv">
                     <h1 class="output" id="output">0</h1> 
                 </section>
                 <section class="inputSection d-flex flex-row justify-content-center align-items-center">
-                    <select class="select1 border-0 list-unstyled" name="country" id="country">
-                    </select><br>
-                    <section class="swapIcon">
+                    <section class="inputFirstSection">                       
+                        <select class="select1 border-0 list-unstyled" name="country" id="country"></select><br>
+                        <!-- <img class="downArrow" src="./images/chevron-down-solid.svg" alt=""> -->
+                    </section>
+                    <section class="swapIcon h-25 mx-4">
                         <i class="swap fa fa-right-left"></i><br>
                     </section>
-                    <select class="select2 border-0" name="country2" id="country2">
-                    </select>
+                    <section class="swapIcon2 h-25 mx-4">
+                        <i class="swap2 fa fa-right-left"></i><br>
+                    </section>
+                    <section class="inputSecondSection">
+                        <select class="select2 border-0" name="country2" id="country2"></select>
+                        <!-- <img class="downArrow" src="./images/chevron-down-solid.svg" alt=""> -->
+                    </section>
+                    
                 </section>
                 <section class="numberInput">
                     <input class="border-0" type="number" id="amount" value="100">
                 </section>                
-                <section class="buttons ps-2 d-flex flex-row justify-content-center align-items-center">
+                <section class="buttons d-flex flex-row justify-content-center align-items-center">
                     <section class="buttonSection1">
                         <button class="convert-btn" id="convert-btn">Convert</button>
                     </section>
@@ -59,27 +74,102 @@
                         <button class="reset-btn" id="reset-btn">Reset</button>
                     </section>
                 </section>
+                <section class="buttons2 d-flex flex-row justify-content-center align-items-center">
+                    <section class="buttonSection3">
+                        <button class="convert-btn2" id="convert-btn2">Convert</button>
+                    </section>
+                    <section class="buttonSection4">
+                        <button class="reset-btn2" id="reset-btn2">Reset</button>
+                    </section>
+                </section>
             </div>
 
-            <div>
-                <i class="fa fa-pencil-square"></i>
-                <h2>This is Trend section</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium suscipit perferendis vitae debitis, dignissimos doloribus obcaecati doloremque praesentium itaque commodi ipsa illum, nobis provident, quo reiciendis. Rerum laudantium numquam hic?</p>
+            <div class="chartMain">
+                <section class="chartSection">
+                    <label class="chartLabel fs-5 text-secondary" for="myChart">Top Trending Companies Today</label>
+                    <canvas id="myChart"></canvas>
+                    <section class="checkButtonDiv">
+                        <button class="checkButton align-items-center" onclick="updateChart()">Check Now</button>
+                    </section>
+                </section>
             </div>
 
-            <div>
-                <i class="fa fa-bar-chart"></i>
-                <h2>This is Stock section</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium suscipit perferendis vitae debitis, dignissimos doloribus obcaecati doloremque praesentium itaque commodi ipsa illum, nobis provident, quo reiciendis. Rerum laudantium numquam hic?</p>
+            <div class="newsMain">
+                <section class="">
+                    <!-- <section class="newsImgDiv d-flex flex-column justify-content-evenly align-items-center">
+                        <img onload="captureHeadline()" class="newsImg" id="newsImg0" src="./images/rounded-social-media-icons-buttons/158.jpg" alt="">
+                    </section> -->
+                    <section class="headlineSection">
+                        <h5 onload="captureHeadline()" class="headline" id="headline0">News Headline</h5>
+                        <p class="date" id="date0">Date:</p>
+                    </section>
+                </section>
+                
+                <section class="">
+                    <!-- <section class="newsImgDiv d-flex flex-column justify-content-evenly align-items-center mt-3">
+                        <img onload="captureHeadline()" class="newsImg" id="newsImg1" src="./images/rounded-social-media-icons-buttons/158.jpg" alt="">
+                    </section> -->
+                    <section class="headlineSection">
+                        <h5 onload="captureHeadline()" class="headline" id="headline1">News Headline</h5>
+                        <p class="date" id="date1">Date:</p>
+                    </section>
+                </section>
+
+                <section class="">
+                    <!-- <section class="newsImgDiv d-flex flex-column justify-content-evenly align-items-center mt-3">
+                        <img onload="captureHeadline()" class="newsImg" id="newsImg2" src="./images/rounded-social-media-icons-buttons/158.jpg" alt="">
+                    </section> -->
+                    <section class="headlineSection">
+                        <h5 onload="captureHeadline()" class="headline" id="headline2">News Headline</h5>
+                        <p class="date" id="date2">Date:</p>
+                    </section>
+                </section>
+
+                <section class="">
+                    <!-- <section class="newsImgDiv d-flex flex-column justify-content-evenly align-items-center mt-3">
+                        <img onload="captureHeadline()" class="newsImg" id="newsImg3" src="./images/rounded-social-media-icons-buttons/158.jpg" alt="">
+                    </section> -->
+                    <section class="headlineSection">
+                        <h5 onload="captureHeadline()" class="headline" id="headline3">News Headline</h5>
+                        <p class="date" id="date3">Date:</p>
+                    </section>
+                </section>
+
             </div>
 
-            <div>
-                <i class="fa fa-envelope"></i>
-                <h2>This is Insights section</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium suscipit perferendis vitae debitis, dignissimos doloribus obcaecati doloremque praesentium itaque commodi ipsa illum, nobis provident, quo reiciendis. Rerum laudantium numquam hic?</p>
+            <div class="aboutMain d-flex flex-column justify-content-center align-items-center text-center">
+                <section class="logoSection2 d-flex flex-column justify-content-center align-items-center">
+                    <img class="logo2" src="./images/logo2.png" alt=""> 
+                </section>
+                <section>
+                    <p id="aboutParagraph">A Javascript project built with support of HTML and CSS, it's designed for hands-on API integration practice.</p>
+                </section>
+                <section class="apiButtonSection d-flex flex-row flex-wrap justify-content-evenly align-items-center">
+                    <a href="https://www.exchangerate-api.com/"><button class="apiButtons exchangeRate"><img id="exchangeRate" src="./images/hr-logo-2022-ldpi-rc.png" alt=""></button></a>
+                    <section class="realtimeSection d-flex flex-row justify-content-center align-items-center">
+                        <a href="https://rapidapi.com/letscrape-6bRBa3QguO5/api/real-time-finance-data"><button class="apiButtons realTimeFinance"><img id="realTimeFinance" src="./images/46d5ceae-c48d-4593-af78-4d2230bba1af.png" alt=""><span class="realtimeSpan">Realtime Finance Data</span></button></a>
+                    </section>
+                    <section class="cahrtjsButtonSection d-flex flex-row justify-content-center align-items-center">
+                        <a href="https://www.chartjs.org/"><button class="apiButtons chartJs"><img id="chartJs" src="./images/favicon.ico" alt=""><span class="chartjsSpan">Chart.JS</span></button></a>
+                    </section>
+                    <img id="footer" src="./images/Footer.png" alt="">
+                </section>
             </div>
-
         </div>
+        <div class="tab-header2" id="tab-header2">
+            <div class="active2 mainIcons2">
+                <i class="fa fa-arrow-right-arrow-left" id="iconImages2"></i>
+            </div>
+            <div class="mainIcons2 trend2">
+                <i class="fa fa-chart-simple" id="iconImages2"></i>
+            </div>
+            <div class="mainIcons2 stock2">
+                <i class="fa-solid fa-newspaper" id="iconImages2"></i>
+            </div>
+            <div class="mainIcons2 about2">
+                <i class="fa fa-circle-info" id="iconImages2"></i>
+            </div>
+        </div>        
     </div>
 
     <!-- Script with Array of supported country codes -->
@@ -87,7 +177,12 @@
 
     <!-- Script with API key -->
     <script src="./javascript/api-key.js"></script>
+
     <!-- Script -->
     <script src="./javascript/script.js"></script>
+
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <script type="text/javascript" src="./javascript/graph.js"></script>
 </body>
 </html>

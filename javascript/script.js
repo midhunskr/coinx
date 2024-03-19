@@ -1,3 +1,4 @@
+//_______________________________App Function___________________________________//
 function _class(name) {
     return document.getElementsByClassName(name);
 }
@@ -8,10 +9,10 @@ let tabPanes = _class("tab-header")
 for(let i=0; i<tabPanes.length;i++){
     tabPanes[i].addEventListener("click", function() {
         _class("tab-header")[0].getElementsByClassName("active")
-[0].classList.remove("active");
+        [0].classList.remove("active");
         tabPanes[i].classList.add("active");
 
-        _class("tab-indicator")[0].style.top = `calc(80px + ${i*50}px)`;
+        _class("tab-indicator")[0].style.top = `calc(150px + ${i*50}px)`;
 
         _class("tab-content")[0].getElementsByClassName("active")[0].classList.remove("active");
         _class("tab-content")[0].getElementsByTagName("div")[i].classList.add("active");
@@ -19,6 +20,28 @@ for(let i=0; i<tabPanes.length;i++){
     });
 }
 
+function _class(name) {
+    return document.getElementsByClassName(name);
+    }
+    
+    let tabPanes2 = _class("tab-header2")
+    [0].getElementsByTagName("div");
+    
+    for(let i=0; i<tabPanes2.length;i++){
+        tabPanes2[i].addEventListener("click", function() {
+            _class("tab-header2")[0].getElementsByClassName("active2")
+            [0].classList.remove("active2");
+            tabPanes2[i].classList.add("active2");
+    
+            _class("tab-indicator2")[0].style.left = `calc(55px + ${i*73}px)`;
+    
+            _class("tab-content")[0].getElementsByClassName("active2")[0].classList.remove("active2");
+            _class("tab-content")[0].getElementsByTagName("div")[i].classList.add("active2");
+        
+        });
+    }
+
+//_______________________________Converter___________________________________//
 
 let api = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`
 const countryInput1 = document.getElementById("country")
@@ -83,15 +106,69 @@ function reset() {
     result.style.color = "#00acee"
  }
 
-// const url = 'https://real-time-finance-data.p.rapidapi.com/stock-news?symbol=AAPL%3ANASDAQ&language=en';
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Key': '059ebac8e5mshf017ad7b5491299p1fbfecjsndff6921df76c',
-// 		'X-RapidAPI-Host': 'real-time-finance-data.p.rapidapi.com'
-// 	}
-// };
 
-// fetch(url, options)
-//     .then(response => response.json())
-//     .then(data => console.log(data))
+ //_______________________________News___________________________________//
+
+ function captureHeadline(){
+    async function fetchData(){
+      const url2 = 'https://real-time-finance-data.p.rapidapi.com/market-trends?trend_type=MARKET_INDEXES&country=us&language=en';
+      const options = {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key': '059ebac8e5mshf017ad7b5491299p1fbfecjsndff6921df76c',
+          'X-RapidAPI-Host': 'real-time-finance-data.p.rapidapi.com'
+        }
+      };
+      
+      const response = await fetch(url2, options)
+      const datapoints = await response.json()
+      return datapoints
+    }
+  
+    fetchData().then(datapoints =>{
+    //   const price = datapoints.data.trends.map(function(index){
+    //     return index.price
+    //   })
+  
+    //   const company = datapoints.data.trends.map(function(index){
+    //     return index.name
+    //   })
+  
+    //   const previousClose = datapoints.data.trends.map(function(index){
+    //     return index.previous_close
+    //   })
+  
+  
+    //   myChart.config.data.labels = company
+    //   myChart.config.data.datasets[0].data = price
+    //   myChart.config.data.datasets[1].data = previousClose
+    //   myChart.update()
+    const length = 80
+    const news1 = datapoints.data.news[0].article_title
+    const news2 = datapoints.data.news[1].article_title
+    const news3 = datapoints.data.news[2].article_title
+    const news4 = datapoints.data.news[3].article_title
+
+    // const img1 = datapoints.data.news[0].article_photo_url
+
+    const date0 = datapoints.data.news[0].post_time_utc
+    const date1 = datapoints.data.news[0].post_time_utc
+    const date2 = datapoints.data.news[0].post_time_utc
+    const date3 = datapoints.data.news[0].post_time_utc
+
+    document.getElementById("headline0").innerHTML = ('"' + news1.substring(0, length) + '..."')
+    document.getElementById("headline1").innerHTML = ('"' + news2.substring(0, length) + '..."')
+    document.getElementById("headline2").innerHTML = ('"' + news3.substring(0, length) + '..."')
+    document.getElementById("headline3").innerHTML = ('"' + news4.substring(0, length) + '..."')
+
+    document.getElementById("date0").innerHTML = date0
+    document.getElementById("date1").innerHTML = date1
+    document.getElementById("date2").innerHTML = date2
+    document.getElementById("date3").innerHTML = date3
+
+    // document.getElementById("newsImg0").src = img1
+
+    })
+  }
+  captureHeadline()
+  
