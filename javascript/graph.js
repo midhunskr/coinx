@@ -21,15 +21,16 @@ function updateChart(){
       return index.price
     })
 
+    const length = 5
     const company = datapoints.data.trends.map(function(index){
-      return index.name
+      return index.name.substring(0, length)
     })
 
     const previousClose = datapoints.data.trends.map(function(index){
       return index.previous_close
     })
 
-
+    
     myChart.config.data.labels = company
     myChart.config.data.datasets[0].data = price
     myChart.config.data.datasets[1].data = previousClose
@@ -59,7 +60,7 @@ const config = {
   data,
   type: 'bar',
   options: {
-    indexAxis: "y",
+    indexAxis: "x",
     scales: {
       y: {
         beginAtZero: true

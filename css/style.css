@@ -18,6 +18,13 @@ p{
     font-weight: 500;
 }
 
+.newsMain a{
+    text-decoration: none !important;
+    font-family: "Jost", sans-serif !important;
+    color: #212529;
+    font-weight: 500;
+}
+
 .logoSection{
     width: 80px;
     height: 80px;
@@ -138,7 +145,7 @@ p{
                 3px 3px 5px #ceced1;
 }
 
- #amount{
+#amount{
     width: 25em;
 }
 
@@ -493,6 +500,21 @@ canvas{
         color: #00acee;
     }
     
+
+    .tabs .tab-header2 > .trend2:hover,
+    .tabs .tab-header2 > .trend2.active {
+        color: #2DA94F;
+    }
+
+    .tabs .tab-header2 > .stock2:hover,
+    .tabs .tab-header2 > .stock2.active {
+        color: #ED412D;
+    }
+
+    .tabs .tab-header2 > .about2:hover,
+    .tabs .tab-header2 > .about2.active {
+        color: #FDBD00;
+    }
     
     .mainIcons2{
         width: 9rem;
@@ -529,18 +551,14 @@ canvas{
         flex-direction: column !important;
         justify-content: space-evenly !important;
         align-items: center !important;
-        width: 90%;
+        width: 100%;
         height: 80%;
-        padding: 0 50% !important;
-        margin: 0 0;
+        padding: .5rem 0 !important;
+        margin: 0 0rem;
         background: #ecf0f3;
         border-radius: 14px;
         box-shadow: inset -2px -2px 5px #ffffff,
                     inset 2px 2px 3px #ceced1;
-    }
-
-    .chartLabel{
-        margin: 1rem -6rem;
     }
     
     .inputSection{
@@ -553,6 +571,11 @@ canvas{
         background: #ecf0f3;
         box-shadow: -3px -3px 7px #ffffff,
                     3px 3px 5px #ceced1;
+    }
+
+    .numberInput{
+        margin: -.5rem 0;
+        padding-bottom: .3rem;
     }
     
     #amount{
@@ -607,7 +630,7 @@ canvas{
     }
     
     .swap2{
-        margin: -.4rem -.4rem;
+        margin: -.5rem -.4rem;
         position: absolute;
         cursor: pointer;
     }
@@ -624,13 +647,13 @@ canvas{
     
     .output{
         /* padding-top: 1rem; */
-        font-size: 2rem;
+        font-size: 1.3rem;
         color: #00acee;
     }
 
     .outputDiv{
-        margin: -.5rem -.5rem;
-        padding-bottom: .2rem;
+        margin: -1rem 0;
+        padding-top: 1.5rem;
     }
     
     .buttons2{
@@ -698,10 +721,13 @@ canvas{
     }
     
     @keyframes moving {
-        from{transform: translateY(50px); opacity: 0;}
-        to{transform: translateY(0px); opacity: 1;}
+        from{transform: translateX(50px); opacity: 0;}
+        to{transform: translateX(0px); opacity: 1;}
     }
 
+    .tabs .tab-indicator{
+        display: none;
+    }
     
     .tabs .tab-indicator2 {
         position: absolute;
@@ -715,5 +741,151 @@ canvas{
         transition: all 500ms ease-in-out;
         z-index: 3;
     }
+
+    /* Trends Section */
+
+    /* .rightSide{
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-evenly !important;
+        align-items: center !important;
+        width: 90%;
+        height: 80%;
+        padding: 0 50% !important;
+        margin: 0 0;
+        background: #ecf0f3;
+        border-radius: 14px;
+        box-shadow: inset -2px -2px 5px #ffffff,
+                    inset 2px 2px 3px #ceced1;
+    } */
+
+    .chartMain{
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-evenly !important;
+        align-items: center !important;
+        width: 100%;
+        height: 80%;
+        margin: 0 0;
+        padding: 0 0 !important;
+        /* padding: .8rem 1rem !important;
+        margin: .2rem 2rem; */
+        background: #ecf0f3;
+        border-radius: 14px;
+        box-shadow: inset -2px -2px 5px #ffffff,
+                    inset 2px 2px 3px #ceced1;
+    }
+
+    .chartLabel{
+        padding: 0rem 2rem;
+    }
     
+    canvas{
+        margin: 0 1rem;
+        padding: 2rem 0;
+        width: 90% !important;
+        height: auto !important;
+    }
+
+    .checkButton{
+        color: #2DA94F;
+    }
+    
+    /* .chartLabel{
+        padding: 0 8rem;
+    } */
+
+    /* News Section */
+
+    .newsMain{
+        width: 100%;
+        height: 80%;
+        padding: 0 0 !important;
+        margin: 0 0;
+    }
+
+    /* About Section */
+    
+    .aboutMain{
+        width: 100%;
+        height: 80%;
+        padding: 0 1rem !important;
+        margin: 0 0;
+        background: #ecf0f3;
+        border-radius: 14px;
+        box-shadow: inset -2px -2px 5px #ffffff,
+                    inset 2px 2px 3px #ceced1;
+    }
+    
+    .logo2{
+        width: 40%;
+    }
+    
+    #aboutParagraph{
+        font-size: 12px !important;
+        padding-top: 1.5rem;
+    }
+    
+    .apiButtonSection{
+        padding-top: 1rem;
+    }
+    
+    .exchangeRate, .realTimeFinance, .chartJs{
+        width: 9rem;
+        height: 1.5rem;
+        border: none;
+        background: #ecf0f3;
+        border-radius: 20px;
+        box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+    }
+    
+    .exchangeRate:hover, .realTimeFinance:hover, .chartJs:hover{
+        box-shadow: inset -3px -3px 7px #ffffff,
+                 inset 3px 3px 5px #ceced1,
+                  -3px -3px 7px #ffffff,
+                  3px 3px 5px #ceced1;
+    }
+    
+    #exchangeRate{
+        width: 110px;
+    }
+    
+    #realTimeFinance{
+        width: 15px;
+    }
+    
+    #chartJs{
+        width: 20px;
+        padding-bottom: .2rem;
+        
+    }
+    
+    /* {
+        width: 11rem;
+        border: none;
+        background: #ecf0f3;
+        border-radius: 20px;
+        box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+    } */
+    
+    .apiButtonSection{
+        gap: 20px !important;
+    }
+    
+    .realtimeSpan{
+        font-size: 9px;
+        font-weight: 700;
+        padding: .8rem .2rem;
+    }
+    
+    .chartjsSpan{
+        font-size: 9px;
+        font-weight: 700;
+        padding-left: .2rem;
+        padding-bottom: .4rem;
+    }
+    
+    #footer{
+        width: 14rem;
+    }
 }
