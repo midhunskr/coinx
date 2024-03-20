@@ -33,8 +33,6 @@ for(let i=0; i<tabPanes2.length;i++){
         [0].classList.remove("active2");
         tabPanes2[i].classList.add("active2");
 
-        // _class("tab-indicator2")[0].style.left = `calc(55px + ${i*73}px)`;
-
         _class("tab-content")[0].getElementsByClassName("active")[0].classList.remove("active");
         _class("tab-content")[0].getElementsByTagName("div")[i].classList.add("active");
     

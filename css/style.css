@@ -77,7 +77,6 @@ p{
     color: #9c9c9c;
     cursor: pointer;
     padding-left: 25px;
-    /* padding-top: 10px; */
 }
 
 .tabs .tab-header > div:hover,
@@ -112,15 +111,6 @@ p{
               -3px -3px 7px #ffffff,
               3px 3px 5px #ceced1;
 }
-
-/* .mainIcons.active{
-    width: 9rem;
-    height: 2rem !important;
-    background: #ecf0f3;
-    border-radius: 8px;
-    box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
-} */
-
 
 /* Converter Section */
 
@@ -299,7 +289,6 @@ select{
     border-radius: 14px;
     box-shadow: inset -2px -2px 5px #ffffff,
                 inset 2px 2px 3px #ceced1;
-
 }
 
 canvas{
@@ -463,14 +452,12 @@ canvas{
 
     #testH1{
         position: absolute;
-        /* margin: -16rem 5rem; */
     }
     
     .tabs .tab-header2 {
         display: flex;
         gap: 1.2rem !important;
-        margin: -5rem 0;     
-        /* border-top: 1px solid #dadce2; */
+        margin: -5rem 0;
     }
     
     .tabs .tab-header2 > div{
@@ -588,7 +575,6 @@ canvas{
     }
     
     select:hover{
-        /* background: #ecf0f3; */
         box-shadow: inset -3px -3px 7px #ffffff,
                     inset 3px 3px 5px #ceced1;
     }
@@ -613,7 +599,6 @@ canvas{
     
     #country, #country2{
         width: 4.9rem;
-        /* margin-right: 2rem; */
     }
 
     .swapIcon2{
@@ -646,7 +631,6 @@ canvas{
     }
     
     .output{
-        /* padding-top: 1rem; */
         font-size: 1.3rem;
         color: #00acee;
     }
@@ -744,21 +728,6 @@ canvas{
 
     /* Trends Section */
 
-    /* .rightSide{
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: space-evenly !important;
-        align-items: center !important;
-        width: 90%;
-        height: 80%;
-        padding: 0 50% !important;
-        margin: 0 0;
-        background: #ecf0f3;
-        border-radius: 14px;
-        box-shadow: inset -2px -2px 5px #ffffff,
-                    inset 2px 2px 3px #ceced1;
-    } */
-
     .chartMain{
         display: flex !important;
         flex-direction: column !important;
@@ -768,8 +737,6 @@ canvas{
         height: 80%;
         margin: 0 0;
         padding: 0 0 !important;
-        /* padding: .8rem 1rem !important;
-        margin: .2rem 2rem; */
         background: #ecf0f3;
         border-radius: 14px;
         box-shadow: inset -2px -2px 5px #ffffff,
@@ -790,10 +757,6 @@ canvas{
     .checkButton{
         color: #2DA94F;
     }
-    
-    /* .chartLabel{
-        padding: 0 8rem;
-    } */
 
     /* News Section */
 
@@ -859,14 +822,6 @@ canvas{
         padding-bottom: .2rem;
         
     }
-    
-    /* {
-        width: 11rem;
-        border: none;
-        background: #ecf0f3;
-        border-radius: 20px;
-        box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
-    } */
     
     .apiButtonSection{
         gap: 20px !important;

@@ -19,8 +19,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- Tab Section -->
+
     <div class="tabs">
-        <!-- <h4 class="position-absolute coin fs-1 pe-2">cOin<span class="x fs-1" id="logo">X</span></h4> -->
         <div class="tab-header">
             <section class="logoSection d-flex flex-column justify-content-center align-items-center" id="logoSection">
                 <img class="logo" src="./images/logo2.png" alt=""> 
@@ -39,7 +41,9 @@
             </div>
         </div>
         <div class="tab-indicator"></div>
-        <!-- <div class="tab-indicator2"></div> -->
+
+        <!-- Content Section -->
+
         <div class="tab-content">
             <div class="active rightSide">
                 <label class="chartLabel fs-5 text-secondary" for="myChart">Convert Currencies</label>              
@@ -49,7 +53,6 @@
                 <section class="inputSection d-flex flex-row justify-content-center align-items-center">
                     <section class="inputFirstSection">                       
                         <select class="select1 border-0 list-unstyled" name="country" id="country"></select><br>
-                        <!-- <img class="downArrow" src="./images/chevron-down-solid.svg" alt=""> -->
                     </section>
                     <section class="swapIcon h-25 mx-4">
                         <i class="swap fa fa-right-left" id="swap"></i><br>
@@ -59,7 +62,6 @@
                     </section>
                     <section class="inputSecondSection">
                         <select class="select2 border-0" name="country2" id="country2"></select>
-                        <!-- <img class="downArrow" src="./images/chevron-down-solid.svg" alt=""> -->
                     </section>
                     
                 </section>
@@ -84,6 +86,8 @@
                 </section>
             </div>
 
+            <!-- Trend Section -->
+
             <div class="chartMain">
                 <section class="chartSection">
                     <label class="chartLabel fs-5 text-secondary" for="myChart">Top Trending Companies Today</label>
@@ -94,11 +98,10 @@
                 </section>
             </div>
 
+            <!-- News Section -->
+
             <div class="newsMain">
                 <section class="">
-                    <!-- <section class="newsImgDiv d-flex flex-column justify-content-evenly align-items-center">
-                        <img onload="captureHeadline()" class="newsImg" id="newsImg0" src="./images/rounded-social-media-icons-buttons/158.jpg" alt="">
-                    </section> -->
                     <section class="headlineSection">
                         <a id="headline0" href="" target="_blank"><h5 onload="captureHeadline()" class="headline text-dark" id="headline0Title">News Headline</h5></a>
                         <p class="date" id="date0">Date:</p>
@@ -106,9 +109,6 @@
                 </section>
                 
                 <section class="">
-                    <!-- <section class="newsImgDiv d-flex flex-column justify-content-evenly align-items-center mt-3">
-                        <img onload="captureHeadline()" class="newsImg" id="newsImg1" src="./images/rounded-social-media-icons-buttons/158.jpg" alt="">
-                    </section> -->
                     <section class="headlineSection">
                         <a id="headline1" href="" target="_blank"><h5 onload="captureHeadline()" class="headline text-dark" id="headline1Title">News Headline</h5></a>
                         <p class="date" id="date1">Date:</p>
@@ -116,9 +116,6 @@
                 </section>
 
                 <section class="">
-                    <!-- <section class="newsImgDiv d-flex flex-column justify-content-evenly align-items-center mt-3">
-                        <img onload="captureHeadline()" class="newsImg" id="newsImg2" src="./images/rounded-social-media-icons-buttons/158.jpg" alt="">
-                    </section> -->
                     <section class="headlineSection">
                         <a id="headline2" href="" target="_blank"><h5 onload="captureHeadline()" class="headline text-dark" id="headline2Title">News Headline</h5></a>
                         <p class="date" id="date2">Date:</p>
@@ -126,16 +123,14 @@
                 </section>
 
                 <section class="">
-                    <!-- <section class="newsImgDiv d-flex flex-column justify-content-evenly align-items-center mt-3">
-                        <img onload="captureHeadline()" class="newsImg" id="newsImg3" src="./images/rounded-social-media-icons-buttons/158.jpg" alt="">
-                    </section> -->
                     <section class="headlineSection">
                         <a id="headline3" href="" target="_blank"><h5 onload="captureHeadline()" class="headline text-dark" id="headline3Title">News Headline</h5></a>
                         <p class="date" id="date3">Date:</p>
                     </section>
                 </section>
-
             </div>
+
+            <!-- About Section -->
 
             <div class="aboutMain d-flex flex-column justify-content-center align-items-center text-center">
                 <section class="logoSection2 d-flex flex-column justify-content-center align-items-center">
@@ -156,6 +151,9 @@
                 </section>
             </div>
         </div>
+
+        <!-- Tabs for mobile -->
+
         <div class="tab-header2" id="tab-header2">
             <div class="active2 mainIcons2">
                 <i class="fa fa-arrow-right-arrow-left" id="iconImages2"></i>
